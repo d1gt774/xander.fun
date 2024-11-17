@@ -1,0 +1,48 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Color Changer</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                padding: 20px;
+                background-color: #f0f0f0;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: #28a745;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #218838;
+            }
+            a {
+                text-decoration: none;
+                color: #007BFF;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Color Changer</h1>
+        <p>Click the button to change the background color:</p>
+        <button onclick="changeColor()">Change Color</button>
+        <br><br>
+        <a href="/">Back to Home</a>
+
+        <script>
+            function changeColor() {
+                const colors = ["#ff5733", "#33ff57", "#3357ff", "#f0f033", "#ff33f5"];
+                document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            }
+        </script>
+    </body>
+    </html>
+    

@@ -1,52 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity 1 | Xander's Fun Website</title>
+  <meta name="description" content="Activity 1: A random joke generator on Xander's website.">
+  <meta http-equiv="refresh" content="3; url=https://d1gt774.github.io/xander.fun/">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Random Joke Generator</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                text-align: center;
-                padding: 20px;
-                background-color: #f0f0f0;
-            }
-            button {
-                padding: 10px 20px;
-                font-size: 16px;
-                background-color: #007BFF;
-                color: white;
-                border: none;
-                cursor: pointer;
-            }
-            button:hover {
-                background-color: #0056b3;
-            }
-            #joke {
-                font-size: 18px;
-                margin-top: 20px;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Random Joke Generator</h1>
-        <button onclick="getJoke()">Get Joke</button>
-        <p id="joke">Click the button to generate a random joke!</p>
-        <br><br>
-        <a href="/">Back to Home</a>
+  <header>
+    <h1>Welcome to Activity 1!</h1>
+    <p>You are being redirected back to the homepage...</p>
+  </header>
 
-        <script>
-            function getJoke() {
-                const jokes = [
-                    "Why don't skeletons fight each other? They don't have the guts.",
-                    "Why don’t scientists trust atoms? Because they make up everything!",
-                    "What do you call fake spaghetti? An impasta!"
-                ];
-                const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
-                document.getElementById('joke').innerText = randomJoke;
-            }
-        </script>
-    </body>
-    </html>
-    
+  <section>
+    <h2>Random Joke Generator</h2>
+    <p id="joke-display">Click the button to get a joke!</p>
+    <button onclick="getJoke()">Get a Joke</button>
+  </section>
+
+  <p>If you're not redirected within 3 seconds, <a href="https://d1gt774.github.io/xander.fun/">click here</a> to go back to the homepage.</p>
+
+  <footer>
+    <p>Want to support me? <a href="https://buymeacoffee.com/xandergonder" target="_blank">Buy me a coffee!</a></p>
+  </footer>
+
+  <script>
+    // List of 50 jokes
+    const jokes = [
+      "Why don't skeletons fight each other? They don't have the guts.",
+      "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+      "I threw a boomerang 10 years ago. Now live in constant fear.",
+      "Why don’t oysters share their pearls? Because they’re shellfish.",
+      "I used to play piano by ear, but now I use my hands.",
+      "I told my computer I needed a break, and now it won’t stop sending me Kit-Kats.",
+      "Did you hear about the restaurant on the moon? Great food, no atmosphere.",
+      "I used to be a baker, but I couldn’t make enough dough.",
+      "Why did the scarecrow win an award? Because he was outstanding in his field!",
+      "I’m reading a book on anti-gravity. It’s impossible to put down.",
+      "I’m on a whiskey diet. I’ve lost three days already.",
+      "I have a fear of speed bumps, but I am slowly getting over it.",
+      "What did one ocean say to the other ocean? Nothing, they just waved.",
+      "Why don’t seagulls fly over the bay? Because then they’d be bagels.",
+      "I’m friends with all electricians – we have good current connections.",
+      "I would tell you a chemistry joke, but I know I wouldn’t get a reaction.",
+      "I used to be a lumberjack, but I just couldn’t hack it.",
+      "I’m trying to lose weight, but it’s not working out.",
+      "I don’t trust stairs. They’re always up to something.",
+      "What do you call fake spaghetti? An impasta.",
+      "What did the grape do when he got stepped on? Nothing but let out a little wine.",
+      "I used to hate facial hair, but then it grew on me.",
+      "I’m reading a book on the history of glue – I can’t put it down.",
+      "Parallel lines have so much in common, it’s a shame they’ll never meet.",
+      "I don’t suffer from insanity. I enjoy every minute of it.",
+      "I would tell you a joke about an elevator, but it’s an uplifting experience.",
+      "I’ve just written a song about tortillas – actually, it’s more of a rap.",
+      "I don’t play soccer because I enjoy the sport. I just do it for kicks.",
+      "What do you call cheese that isn’t yours? Nacho cheese.",
+      "I used to work at a blanket factory, but it folded.",
+      "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+      "I suffer from kleptomania, but when it gets really bad, I take something for it.",
+      "I didn’t want to believe that my dad was stealing from his job as a traffic cop, but when I got home all the signs were there.",
+      "The early bird might get the worm, but the second mouse gets the cheese.",
+      "I didn’t think orthopedic shoes would work, but I stand corrected.",
+      "What’s orange and sounds like a parrot? A carrot!",
+      "I used to work at a bank, but I lost interest.",
+      "Why are frogs so happy? They eat whatever bugs them.",
+      "Why can’t you hear a pterodactyl go to the bathroom? Because the “P” is silent.",
+      "I’m on a seafood diet. I see food, and I eat it.",
+      "What’s brown and sticky? A stick.",
+      "A termite walks into the bar and asks, ‘Is the bartender here?’",
+      "I would tell you a joke about a pencil, but it’s pointless.",
+      "Why did the bicycle fall over? It was two-tired.",
+      "I got a job at a bakery because I kneaded dough.",
+      "Did you hear about the mathematician who’s afraid of negative numbers? He’ll stop at nothing to avoid them.",
+      "I used to be a baker, but I couldn't make enough dough.",
+      "I tried to start a band, but my first practice was a real disaster. We couldn’t get our instruments in tune.",
+      "I don’t have a girlfriend, but I know a girl who’d be mad at me for saying that.",
+      "Why was the math book sad? Because it had too many problems.",
+      "I was going to tell you a joke about a pencil, but I forgot it.",
+      "How does a penguin build its house? Igloos it together.",
+      "What’s the best way to watch a fly fishing tournament? Live stream.",
+      "What do you call a fish with no eyes? Fsh.",
+      "What did the big flower say to the little flower? Hey, bud!"
+    ];
+
+    // Function to get a random joke
+    function getJoke() {
+      const randomIndex = Math.floor(Math.random() * jokes.length);
+      const joke = jokes[randomIndex];
+      document.getElementById('joke-display').innerText = joke;
+    }
+  </script>
+
+</body>
+</html>
